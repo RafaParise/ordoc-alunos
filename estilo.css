@@ -1,0 +1,53 @@
+:root {
+  --fundo: #F8FAFC; --card: #FFFFFF; --borda: #E2E8F0; --texto: #0F172A; --suave: #475569;
+  --primaria: #2563EB; --destaque: #0D9488;
+  --verde: #10B981; --amarela: #F59E0B; --vermelha: #EF4444; --cinza: #94A3B8;
+  --verde-f: #ECFDF5; --amarela-f: #FFFBEB; --vermelha-f: #FEF2F2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #090D16; --card: #1E293B; --borda: #334155; --texto: #F1F5F9; --suave: #94A3B8;
+    --verde-f: #052e22; --amarela-f: #3a2a06; --vermelha-f: #3b0d0d;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 16px/1.45 "Inter", "Segoe UI", system-ui, sans-serif; }
+.topo { background: linear-gradient(135deg, #0F172A, #1E3A8A); color: #fff; padding: 18px 16px 16px; }
+.marca { font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 15px; opacity: .9; }
+.logo { width: 18px; height: 18px; border-radius: 50%; border: 3px solid #fff; position: relative; }
+.logo::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: #14B8A6; }
+.quem { font-size: 22px; font-weight: 700; margin-top: 6px; }
+.quem small { display: block; font-size: 13px; font-weight: 400; opacity: .85; }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+.resumo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+.chip { background: var(--card); border: 1px solid var(--borda); border-radius: 12px; padding: 10px; text-align: center; }
+.chip b { display: block; font-size: 24px; }
+.chip.verde b { color: var(--verde); } .chip.amarela b { color: var(--amarela); } .chip.vermelha b { color: var(--vermelha); }
+.avisos { background: var(--vermelha-f); border: 1px solid var(--vermelha); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; }
+.avisos h2 { font-size: 15px; margin: 0 0 6px; }
+.avisos ul { margin: 0; padding-left: 18px; }
+.materia { background: var(--card); border: 1px solid var(--borda); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.materia > summary { list-style: none; cursor: pointer; padding: 14px; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.materia > summary::-webkit-details-marker { display: none; }
+.materia h2 { font-size: 17px; margin: 0; flex: 1 1 100%; }
+.contagem { font-size: 13px; color: var(--suave); }
+.medias { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 14px 10px; }
+.media { font-size: 13px; background: var(--fundo); border: 1px solid var(--borda); border-radius: 10px; padding: 6px 10px; }
+.media b { font-family: "JetBrains Mono", Consolas, monospace; }
+.faltas { margin: 0 14px 10px; border-radius: 10px; padding: 8px 10px; font-size: 14px; border-left: 4px solid var(--cinza); background: var(--fundo); }
+.faltas.verde { border-color: var(--verde); } .faltas.amarela { border-color: var(--amarela); background: var(--amarela-f); }
+.faltas.vermelha { border-color: var(--vermelha); background: var(--vermelha-f); }
+.item { border-top: 1px solid var(--borda); padding: 10px 14px; display: grid; grid-template-columns: 14px 1fr; gap: 4px 10px; }
+.b { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-top: 5px; background: var(--cinza); }
+.b.verde { background: var(--verde); } .b.amarela { background: var(--amarela); } .b.vermelha { background: var(--vermelha); }
+.item .tit { font-weight: 600; }
+.item .cod { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; color: var(--destaque); margin-right: 6px; }
+.item .sit, .item .nota { font-size: 14px; color: var(--suave); grid-column: 2; }
+.item .nota b { color: var(--texto); }
+.item .aval { grid-column: 2; font-size: 14px; background: var(--fundo); border-radius: 8px; padding: 6px 8px; white-space: pre-wrap; }
+.item a { grid-column: 2; font-size: 14px; color: var(--primaria); }
+.tipo { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); }
+.erro { background: var(--card); border: 1px solid var(--borda); border-radius: 14px; padding: 18px; }
+.rodape { max-width: 760px; margin: 0 auto; padding: 0 16px 28px; font-size: 13px; color: var(--suave); }
+.legenda { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.legenda .b { margin-top: 0; vertical-align: -1px; }
